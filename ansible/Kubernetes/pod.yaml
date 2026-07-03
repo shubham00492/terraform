@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-app
+  labels:
+    app: my-app   
+spec:
+  containers:
+    - name: my-app  
+      image: shubhamjain77/shubham:httpd-vi
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 80
