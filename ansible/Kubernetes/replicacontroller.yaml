@@ -1,4 +1,4 @@
-apiversion : v1
+apiVersion : v1
 kind: ReplicationController
 metadata:
   name: myrpcontroller
@@ -10,7 +10,7 @@ spec:
     metadata:
       name: myrppod
       labels:
-        app: myreplica
+        app: myrppod
     spec:
       containers:
         - name: myrppod
