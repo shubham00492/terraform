@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: my-app
+  namespace: dataspace
   labels:
     app: my-app   
 spec:
@@ -16,15 +17,12 @@ spec:
         - containerPort: 80
 ---
 apiVersion: v1
-kind: Service
+kind: Namespace
 metadata:
-  name: my-app
-spec:
-type: ClusterIP
-    selector:
-      app: my-app
-    ports:
-      - protocol: TCP
-        port: 80
-        targetPort: 80
-    
+  name: dataspace
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+apiversion : v1
+kind: ReplicationController
+metadata:
+  name: myrpcontroller
+spec:
+  replicas: 3
+  selector:
+    app: myrppod
+  template:
+    metadata:
+      name: myrppod
+      labels:
+        app: myreplica
+    spec:
+      containers:
+        - name: myrppod
+          image: shubhamjain77/shubham:httpd-vi
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
