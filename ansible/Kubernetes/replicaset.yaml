@@ -19,11 +19,11 @@ spec:
   template:
     metadata:
       labels:
-        env:dev 
-        app:nginx
+        env: dev 
+        app: nginx
     spec:
       containers:
-        - name: myapp
+        - name: nginx
           image: shubhamjain77/shubham:httpd-vi
           resources:
             limits:
