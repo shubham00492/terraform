@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myreplicaset
+  labels:
+    app: myapp
+    key: value   
+spec:
+  replicas: 5  
+  selector:
+    matchLabels:
+      env: dev
+      app: nginx
+      matchExpressions:
+        - key: env
+          operator: In
+          values:
+            - dev 
+  template:
+    metadata:
+      labels:
+        env:dev 
+        app:nginx
+    spec:
+      containers:
+        - name: myapp
+          image: shubhamjain77/shubham:httpd-vi
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
