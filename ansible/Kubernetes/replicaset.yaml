@@ -11,7 +11,7 @@ spec:
     matchLabels:
       env: dev
       app: nginx
-      matchExpressions:
+    matchExpressions:
         - key: env
           operator: In
           values:
